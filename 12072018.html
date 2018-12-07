@@ -1,0 +1,25 @@
+<DOCTYPE html><html> 
+<head> 
+<style>
+body {
+	margin-left: 22%;
+	margin-right: 22%;
+}
+h1 a {
+	text-decoration: none;
+	color: black;
+}
+</style><title>Encrypt and Decrypt files using 7-zip and Batch Scripting</title></head><body> 
+<h1><a href="index.html">Tech++</a></h1><hr> 
+<h2>Encrypt and Decrypt files using 7-zip and Batch Scripting</h2> 
+<p>Ever want a quick and easy way to encrypt and then decrypt single files on your computer? Well you're in luck because while bored, I found an interesting way to do this using 7-zip and a batch script. Why not Powershell? I was simply feeling a little nostalgic and decided to write out a shell script the old fashioned way. This one is a relatively simple task.</p> 
+<ol> 
+<li>First thing you have to make sure you do is go out and download the latest installer for 7-zip. Choose your preferred installer <a href="https://www.7-zip.org/download.html">here</a>. Install it like you would any other software.</li> 
+<li>Time to write a little script. Fire up your favorite text editor and create a file called "encrypt.bat".</li> 
+<li>Enter the following code:<br><code>@echo off<br>"C:\Program Files\7-Zip\7z.exe" a %1.7z %1 -p<br>del %1</code><br>Save this file when completed.</li> 
+<li>Create a new file and call it "decrypt.bat". Enter the following code below:<br><code>@echo off<br>"C:\Program Files\7-Zip\7z.exe" e %1</code><br>Save this file when completed.</li> 
+<li>That's it! You're ready to put this to use.</li> 
+</ol> 
+<p>You can now utilize these scripts via command line or windows explorer by just dragging and dropping a file onto the batch script. The encrypt script works by adding your file to an encrypting archive that you then apply a password to. Take note of that password for when you decrypt, you will take the .7z file and run it through the decrypt.bat. Take note that in the above code examples the "Program Files" path is used. This path may be different if you decide to use the x86 version ("Program Files (x86)"). Enjoy!</p> 
+<p>Copyright Tech++ 2018</p> 
+</body></html> 
