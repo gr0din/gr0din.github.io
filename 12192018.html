@@ -1,0 +1,21 @@
+<DOCTYPE html><html> 
+<head> 
+<style>
+body {
+	margin-left: 22%;
+	margin-right: 22%;
+}
+h1 a {
+	text-decoration: none;
+	color: black;
+}
+</style><title>Automate Windows Input with VBScript</title></head><body> 
+<h1><a href="index.html">Tech++</a></h1><hr> 
+<h2>Automate Windows Input with VBScript</h2> 
+<p>Ever want a built-in Windows friendly way to automate keyboard input? While there already are applications that can achieve this (AutoHotkey comes to mind), there is also a way to do this using VBScript for the more adventurous power users.</p> 
+<p>To start, fire up your favorite text editor and create a file with the name of your choosing (just make sure it ends in .vbs). The object we are going to use to achieve our automation is called "wscript.shell". As part of this demo I'm also going to include another object "Word.Basic", which will allow us to take a screenshot.</p> 
+<p><code>set wShell = createObject("wscript.shell")<br>set wBasic = createObject("Word.Basic")<br>wBasic.sendKeys "{PRTSC}"<br>wShell.sendKeys "^{Esc}"<br>WScript.sleep 500<br>wShell.sendKeys "paint"<br>WScript.sleep 500<br>wShell.sendKeys "{Enter}"<br>WScript.sleep 500<br>wShell.sendKeys "^v"</code></p> 
+<p>So what does this code do? It first presses the print screen button to capture your display, press Ctrl+Esc (for Windows key), types in paint, presses enter, and pastes the screenshot into Paint. There are some WScript.sleep commands thrown in every so often to give the Windows UI enough time to react to the text getting typed in (half a second in this example).</p> 
+<p>You can take this methodology and apply it to a whole myriad of ideas and applications. So find yourself doing some of the same tasks over and over and are in need of a way automate those repetetive tasks. Give this a try!</p> 
+<p>Copyright Tech++ 2018 All Rights Reserved. <a href="mailto:contact@techplus.plus">Comments?</a></p> 
+</body></html> 
